@@ -1,2 +1,3 @@
 # antiVirus
- search for infecred part in a file 
+ search for infected part in a file 
+ creating a log.
