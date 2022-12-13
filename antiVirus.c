@@ -11,8 +11,8 @@
 #include <stdlib.h>
 
 #define MAX 50
-#define FIRST_PART 4
-#define LAST_PART 5
+#define FIRST_BYTES 4
+#define LAST_BYTES 5
 #define Infected 0
 #define SAFE 1
 int virusCheck(char* path, char* virusPath);
@@ -158,12 +158,12 @@ int main(int argc, char* argv[])
 		}
 		else
 		{
-			if ((bool = fastVirusCheck(path, argv[2])) == FIRST_PART)
+			if ((bool = fastVirusCheck(path, argv[2])) == FIRST_BYTES)
 			{
 				fprintf(log, "%s - Infected! (first 20%)\n", path);
 				printf("%s - Infected! (first 20%)\n", path);
 			}
-			else if (bool == LAST_PART)
+			else if (bool == LAST_BYTES)
 			{
 				fprintf(log, "%s - Infected! (last 20%)\n", path);
 
@@ -256,7 +256,7 @@ int fastVirusCheck(char* path, char* virusPath)
 			if (j >= virusSize)
 			{
 
-				return FIRST_PART;
+				return FIRST_BYTES;
 			}
 		}
 
@@ -285,7 +285,7 @@ int fastVirusCheck(char* path, char* virusPath)
 			{
 				printf("the virus is in the last 20% of the file   -     ", '%');
 
-				return LAST_PART;
+				return LAST_BYTES;
 			}
 		}
 		else
